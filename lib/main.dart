@@ -27,6 +27,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  String dropdownValue = 'English';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +42,61 @@ class _MyHomePageState extends State<MyHomePage> {
                   Icons.photo_outlined,
                   size: 100.0,
                 ),
-                Text('data')
+                Padding(
+                  padding: const EdgeInsets.only(top: 40.0),
+                  child: Text(
+                    'Please Select Your Language',
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20),
+                  child: Text(
+                    'You can change the language \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t at any time',
+                    style:
+                        TextStyle(fontWeight: FontWeight.w300, fontSize: 15.0),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 9.0),
+                  child: Container(
+                    width: 200,
+                    padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+                    decoration: BoxDecoration(
+                      border: Border.all(),
+                    ),
+                    child: DropdownButton<String>(
+                      value: dropdownValue,
+                      icon: const Icon(Icons.arrow_drop_down_outlined),
+                      isExpanded: true,
+                      iconSize: 30,
+                      elevation: 16,
+                      style: const TextStyle(color: Colors.black),
+                      onChanged: (String? newValue) {
+                        setState(() {
+                          dropdownValue = newValue!;
+                        });
+                      },
+                      items: <String>[
+                        'English',
+                        'Hindi',
+                        'French',
+                        'Spanish',
+                        'Russian',
+                        'Arabic'
+                      ].map<DropdownMenuItem<String>>((String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(
+                            value,
+                            style: TextStyle(fontSize: 20,letterSpacing: 0.9,fontWeight:FontWeight.w300),
+                          ),
+                        );
+                      }).toList(),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
