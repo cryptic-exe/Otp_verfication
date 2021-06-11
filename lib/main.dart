@@ -90,16 +90,39 @@ class _MyHomePageState extends State<MyHomePage> {
                           value: value,
                           child: Text(
                             value,
-                            style: TextStyle(fontSize: 20,letterSpacing: 0.9,fontWeight:FontWeight.w300),
+                            style: TextStyle(
+                                fontSize: 20,
+                                letterSpacing: 0.9,
+                                fontWeight: FontWeight.w300),
                           ),
                         );
                       }).toList(),
                     ),
                   ),
                 ),
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Container(
+                    width: 200,
+                    padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+                    decoration: BoxDecoration(
+                      color: Colors.deepPurple,
+                      border: Border.all(),
+                    ),
+                    child: TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        'NEXT',
+                        style: TextStyle(color: Colors.white,fontWeight: FontWeight.w400,letterSpacing: 0.9),
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
+          Image(image: AssetImage('Images/design1.png'),alignment: Alignment.,),
+          Image(image: AssetImage('Images/design2.png'))
         ],
       ),
     );
