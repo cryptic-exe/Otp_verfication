@@ -126,28 +126,27 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
           ),
-          Stack(
-            children: [
-              Positioned.fill(
-                child: Container(
-                  width: 393,
-                  child: Image(
-                    image: AssetImage('Images/design2.png'),
-                    fit: BoxFit.fill,
-                  ),
-                ),
+        ],
+      ),
+      bottomSheet: Stack(
+        children: [
+          Positioned.fill(
+            child: Container(
+              width: double.infinity,
+              child: Image(
+                image: AssetImage('Images/design2.png'),
+                colorBlendMode: BlendMode.overlay,
+                fit: BoxFit.fill,
               ),
-              Positioned(
-                child: Container(
-                  width: 393,
-                  child: Image(
-                    image: AssetImage('Images/design1.png'),
-                    colorBlendMode: BlendMode.overlay,
-                    fit: BoxFit.fill,
-                  ),
-                ),
-              ),
-            ],
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            child: Image(
+              image: AssetImage('Images/design1.png'),
+              colorBlendMode: BlendMode.overlay,
+              fit: BoxFit.fill,
+            ),
           ),
         ],
       ),
