@@ -30,7 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Text(
                     'Please Select Your Language',
                     style: TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 20.0),
+                        fontWeight: FontWeight.bold, fontSize: 25.0),
                   ),
                 ),
                 Padding(

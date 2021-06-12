@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:otp_verification/Frame.dart';
-
+import 'MobileNumber.dart';
 void main() {
   runApp(MyApp());
 }
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      home: MobileNumber(),  //original function will used is MyHomePage(),
       debugShowCheckedModeBanner: false,
     );
   }
