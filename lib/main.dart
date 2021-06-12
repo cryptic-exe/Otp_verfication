@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 
 void main() {
   runApp(MyApp());
@@ -46,16 +47,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   padding: const EdgeInsets.only(top: 40.0),
                   child: Text(
                     'Please Select Your Language',
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 20.0),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 20),
                   child: Text(
                     'You can change the language \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t at any time',
-                    style:
-                        TextStyle(fontWeight: FontWeight.w300, fontSize: 15.0),
+                    style: TextStyle(
+                        fontWeight: FontWeight.w300, fontSize: 15.0),
                   ),
                 ),
                 Padding(
@@ -113,7 +114,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       onPressed: () {},
                       child: Text(
                         'NEXT',
-                        style: TextStyle(color: Colors.white,fontWeight: FontWeight.w400,letterSpacing: 0.9),
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.w400,
+                            letterSpacing: 0.9),
                       ),
                     ),
                   ),
@@ -121,8 +126,29 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
           ),
-          Image(image: AssetImage('Images/design1.png'),alignment: Alignment.,),
-          Image(image: AssetImage('Images/design2.png'))
+          Stack(
+            children: [
+              Positioned.fill(
+                child: Container(
+                  width: 393,
+                  child: Image(
+                    image: AssetImage('Images/design2.png'),
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ),
+              Positioned(
+                child: Container(
+                  width: 393,
+                  child: Image(
+                    image: AssetImage('Images/design1.png'),
+                    colorBlendMode: BlendMode.overlay,
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
