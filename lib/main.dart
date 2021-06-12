@@ -107,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     width: 200,
                     padding: const EdgeInsets.only(left: 10.0, right: 10.0),
                     decoration: BoxDecoration(
-                      color: Colors.deepPurple,
+                        color: Color.fromRGBO(46, 59, 98,1),
                       border: Border.all(),
                     ),
                     child: TextButton(
