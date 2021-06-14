@@ -93,7 +93,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       border: Border.all(),
                     ),
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/MobileNumber');
+                      },
                       child: Text(
                         'NEXT',
                         style: TextStyle(

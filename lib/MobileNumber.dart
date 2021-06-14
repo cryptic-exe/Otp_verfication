@@ -10,6 +10,8 @@ class MobileNumber extends StatefulWidget {
 }
 
 class _MobileNumberState extends State<MobileNumber> {
+  TextEditingController numberController = new TextEditingController();
+  String phoneNumber ="";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +27,9 @@ class _MobileNumberState extends State<MobileNumber> {
                   Icons.cancel_outlined,
                   color: Colors.black,
                 ),
-                onPressed: () {}),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/Frame');
+                }),
           ),
           Column(
             children: [
@@ -53,6 +57,13 @@ class _MobileNumberState extends State<MobileNumber> {
                 ),
                 child: Center(
                   child: TextField(
+                    onSubmitted: (String text){
+                      setState(() {
+                        phoneNumber = numberController.text;
+                      });
+                      numberController.clear();
+                    },
+                    controller: numberController,
                     keyboardType: TextInputType.phone,
                     inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                     decoration: InputDecoration(
@@ -76,7 +87,9 @@ class _MobileNumberState extends State<MobileNumber> {
                     border: Border.all(),
                   ),
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/VerifyPhone');
+                    },
                     child: Text(
                       'CONTINUE',
                       style: TextStyle(
