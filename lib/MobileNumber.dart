@@ -92,6 +92,31 @@ class _MobileNumberState extends State<MobileNumber> {
           ),
         ],
       ),
+      bottomNavigationBar: Stack(
+        children: [
+          Positioned.fill(
+            child: Container(
+              width: double.infinity,
+              child: Image(
+                image: AssetImage('Images/Vector2.png'),
+                colorBlendMode: BlendMode.overlay,
+                fit: BoxFit.fill,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 15),
+            child: Container(
+              width: double.infinity,
+              child: Image(
+                image: AssetImage('Images/Vector1.png'),
+                colorBlendMode: BlendMode.overlay,
+                fit: BoxFit.fill,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
