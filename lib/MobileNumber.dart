@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/services.dart';
+String phoneNumber ="";
 
 class MobileNumber extends StatefulWidget {
   const MobileNumber({Key? key}) : super(key: key);
@@ -11,7 +12,6 @@ class MobileNumber extends StatefulWidget {
 
 class _MobileNumberState extends State<MobileNumber> {
   TextEditingController numberController = new TextEditingController();
-  String phoneNumber ="";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -88,6 +88,9 @@ class _MobileNumberState extends State<MobileNumber> {
                   ),
                   child: TextButton(
                     onPressed: () {
+                      setState(() {
+                        phoneNumber = numberController.text;
+                      });
                       Navigator.pushNamed(context, '/VerifyPhone');
                     },
                     child: Text(
